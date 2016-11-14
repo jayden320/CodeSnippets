@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jy model protocol</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>+ (NSDictionary *)modelCustomPropertyMapper {
+    return @{&lt;#property_name#&gt; : &lt;#json_node_name#&gt;};
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{&lt;#property_name#&gt; : &lt;#submodel_class_name#&gt;};
+}
+
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    &lt;#custom_transform#&gt;
+    return YES;
+};</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>206AF53C-DF32-4E13-AC4E-1C0334DC248D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>model protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jy request protocol</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSString *)baseUrl {
+    return &lt;#base url#&gt;;
+}
+
+- (NSString *)requestUrl {
+    return &lt;#request url#&gt;;
+}
+
+- (id)requestArgument {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    return params;
+}
+
+- (YTKRequestMethod)requestMethod {
+    return YTKRequestMethodPost;
+}
+
+- (YTKRequestSerializerType)requestSerializerType {
+    return YTKRequestSerializerTypeHTTP;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9994D075-D8B7-4D17-9EE7-64904AF83209</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>request protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

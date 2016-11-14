@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jy list request</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#class#&gt; ()&lt;UITableViewDataSource, UITableViewDelegate, ListRequestDelegate&gt;
+
+@property (nonatomic, strong) ListRequest *listRequest;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@end
+
+@implementation &lt;#class#&gt;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = &lt;#title#&gt;;
+    
+    _listRequest = [[ListRequest alloc] initWithInfoClass:[NSObject class] action:&lt;#action#&gt;];
+    
+    _listRequest.delegate = self;
+    
+    @weakify(self)
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self)
+        [self.listRequest requestFirstList:[self params]];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self)
+        [self.listRequest requestNextList:[self params]];
+    }];
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (NSDictionary *)params {
+    return nil;
+}
+
+- (void)listRequestDidFinish:(ListRequest *)listRequest {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
+    
+    if (listRequest.isReceiveAllList) {
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }else {
+        [self.tableView.mj_footer resetNoMoreData];
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A8FAD210-4619-47A3-A9D9-124056A0F177</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>list request</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
