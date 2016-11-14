@@ -2,5 +2,6 @@
 
 ## Usage:
 
-cd CodeSnippets
-./setup.sh
+1. cd CodeSnippets
+
+2. ./setup.sh
